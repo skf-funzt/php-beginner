@@ -9,29 +9,32 @@
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
-  // For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
-  "forwardPorts": [8080, 3306],
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers-contrib/features/asdf-package:1": {},
-    "ghcr.io/guiyomh/features/just:0": {}
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "cweijan.vscode-mysql-client2",
-        "mrmlnc.vscode-apache",
-        "xdebug.php-debug",
-        "bmewburn.vscode-intelephense-client",
-        "MehediDracula.php-constructor",
-        "xdebug.php-pack",
-        "MehediDracula.php-namespace-resolver"
-      ]
-    }
-  },
+	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
+	"forwardPorts": [
+		8080,
+		3306
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers-contrib/features/asdf-package:1": {},
+		"ghcr.io/guiyomh/features/just:0": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"cweijan.vscode-mysql-client2",
+				"mrmlnc.vscode-apache",
+				"xdebug.php-debug",
+				"bmewburn.vscode-intelephense-client",
+				"MehediDracula.php-constructor",
+				"xdebug.php-pack",
+				"MehediDracula.php-namespace-resolver"
+			]
+		}
+	},
 
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html && sudo sed -i '0,/Listen 80/s//\\#&/' /etc/apache2/ports.conf && apache2ctl start"
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html && sudo sed -i '0,/Listen 80/s//\\#&/' /etc/apache2/ports.conf && apache2ctl start"
 
   // Configure tool-specific properties.
   // "customizations": {},
