@@ -2,7 +2,7 @@
 <?php
   $int = 42;
   $str = "1337";
-  $str2 = "PHP";
+  $str2 = "PHP8";
   $float = 9.001;
 
   var_dump($int); print('<br>');
