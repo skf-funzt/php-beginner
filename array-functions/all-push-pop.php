@@ -9,12 +9,12 @@
   $lastElement = array_pop($array);
   print("array_pop\n"); 
   print_r($array); 
-  echo $lastElement; 
+  echo $lastElement . "\n"; 
 
   $firstElement = array_shift($array);
   print("array_shift\n");
   print_r($array); 
-  echo $firstElement; 
+  echo $firstElement . "\n"; 
 
   array_unshift($array, "Elderberry");
   print("array_unshift\n");
