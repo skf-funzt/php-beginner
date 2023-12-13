@@ -1,5 +1,11 @@
 RewriteEngine On
+
 RewriteRule ^api/(.*)$ /api.php/$1 [L,QSA]
+
+# RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+# RewriteRule ^ %1 [L,NE,R=302]
+
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
 
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
