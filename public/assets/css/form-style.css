@@ -1,0 +1,72 @@
+/* Reset default form styles */
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+form {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style form elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  display: block;
+  padding: 8px;
+  margin: 8px 0 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+input[type="submit"],
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-radius: 2px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style form labels */
+label {
+  display: block;
+  font-weight: bold;
+}
+
+/* Style form error messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Style form success messages */
+.success-message {
+  color: green;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  margin: 16px 0px;
+}
