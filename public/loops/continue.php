@@ -1,6 +1,12 @@
 <pre>
 <?php
-  $fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
+  $fruits = [
+    'apple', 
+    'banana', 
+    'orange', 
+    'grape', 
+    'kiwi',
+  ];
 
   foreach ($fruits as $fruit) {
     if ($fruit === 'orange') {

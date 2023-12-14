@@ -13,6 +13,7 @@ form {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="checkbox"],
 textarea,
 select {
   display: block;
@@ -22,6 +23,7 @@ select {
   border-radius: 2px;
   font-size: 12px;
 }
+
 
 input[type="submit"],
 button {
@@ -46,6 +48,11 @@ button:hover {
 label {
   display: block;
   font-weight: bold;
+}
+
+/* Required asterisk */
+label .required::after {
+  content: " *";
 }
 
 /* Style form error messages */

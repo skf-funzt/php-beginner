@@ -3,11 +3,11 @@ $score = isset($_POST['score']) ? $_POST['score'] : 15;
 
 if (isset($_POST['increase'])) {
   $score += 10;
-}
-
-if (isset($_POST['decrease'])) {
+} elseif (isset($_POST['decrease'])) {
   $score -= 10;
   if ($score < 0) $score = 0;
+} else {
+  $score = 42;
 }
 ?>
 
@@ -30,6 +30,11 @@ if (isset($_POST['decrease'])) {
     type="submit" 
     name="decrease" 
     value="Decrease"
+  >
+  <input 
+    type="submit" 
+    name="some" 
+    value="thing"
   >
 </form>
 
