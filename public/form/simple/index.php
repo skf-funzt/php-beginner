@@ -1,7 +1,5 @@
 <?php
-// If the form was submitted, check for errors
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  // Redirect to welcome.php after 3 seconds
   $currentDirectory = dirname($_SERVER['PHP_SELF']);
   header("location: $currentDirectory/../welcome.php?userName={$_POST['name']}");
 }
