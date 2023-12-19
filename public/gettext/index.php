@@ -1,20 +1,23 @@
 <?php
 // Sprache auf Deutsch setzen
 // Wichtig putenv() verwenden, da setlocale() manchmal nicht aussreicht
-putenv('LC_ALL=de_DE');
-setlocale(LC_ALL, 'de_DE');
+$locale = 'de_DE.utf8';
+putenv("LC_ALL=$locale");
+setlocale(LC_ALL, $locale);
 
 // Angeben des Pfads der Übersetzungstabellen
-bindtextdomain("gettextApp", "./locale");
+$domain = 'myapp';
+bindtextdomain($domain, "./../../locale");
+bind_textdomain_codeset($domain, 'UTF-8');
 
 // Domain auswählen
-textdomain("localhost");
-
-// Die Übersetzung wird nun in ./locale/de_DE/LC_MESSAGES/meinePHPApp.mo gesucht
+textdomain($domain);
 
 // Ausgeben des Test-Textes
-echo gettext("Willkommen in meiner PHP-Anwendung");
+echo gettext("Welcome to my PHP website");
+
+echo '<br>';
 
 // Oder verwenden Sie den Alias _() für gettext()
-echo _("Einen schönen Tag noch");
+echo _("Have a nice day");
 ?>

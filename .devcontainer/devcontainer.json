@@ -34,16 +34,8 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": [
-		"sudo chmod a+x $(pwd)",
-		"sudo rm -rf /var/www/html",
-		"sudo ln -s $(pwd) /var/www/html",
-		"sudo sed -i '0,/Listen 80/s//\\#&/' /etc/apache2/ports.conf",
-		"sudo a2enmod rewrite",
-		"cd /var/www/html && composer install",
-		"sudo chmod -R 777 $(pwd)",
-		"apache2ctl start"
-	]
+	"postCreateCommand": "sh ${workspaceFolder}/setup.sh"
+
 
   // Configure tool-specific properties.
   // "customizations": {},

@@ -1,0 +1,29 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <vscode@11d7f480c326>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-19 13:09+0000\n"
+"PO-Revision-Date: 2023-12-19 13:09+0000\n"
+"Last-Translator:  <vscode@11d7f480c326>\n"
+"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Die Übersetzung wird nun in ./locale/de_DE/LC_MESSAGES/meinePHPApp.mo gesucht
+#. Ausgeben des Test-Textes
+#: public/gettext/index.php:27
+msgid "Welcome to my PHP website"
+msgstr "Willkommen auf meiner PHP Webseite"
+
+#. Oder verwenden Sie den Alias _() für gettext()
+#: public/gettext/index.php:32
+msgid "Have a nice day"
+msgstr "Haben Sie einen schönen Tag"
