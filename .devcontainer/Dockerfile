@@ -2,15 +2,25 @@ FROM mcr.microsoft.com/devcontainers/php:1-8.2-bullseye
 
 # Install MariaDB client
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mariadb-client \ 
+    && apt-get install -y mariadb-client \
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+# Install libicu-dev
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y libicu-dev\
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Install php-mysql driver
-RUN docker-php-ext-install mysqli pdo pdo_mysql gettext
+RUN docker-php-ext-install mysqli pdo pdo_mysql gettext intl
 
 # Code Sanbox
 # Install node
 RUN apt update -y && apt install -y nodejs
+
+# Setup that needs apache to restart - this avoids hanging in the VSCode remote session
+ADD ./setup.sh /tmp/setup.sh
+RUN chmod +x /tmp/setup.sh
+RUN /tmp/setup.sh
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
