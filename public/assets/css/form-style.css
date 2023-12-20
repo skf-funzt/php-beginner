@@ -1,12 +1,19 @@
-/* Reset default form styles */
-body {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+
+
+:root {
+  --button-hue: 207;
+  --button-saturation: 100%;
+  --button-lightness: 50%;
+  --button-darken: 8%;
 }
+
+/* Reset default form styles */
 
 form {
   padding: 4px;
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 /* Style form elements */
@@ -18,10 +25,29 @@ textarea,
 select {
   display: block;
   padding: 8px;
-  margin: 8px 0 8px 0;
   border: 1px solid #ccc;
-  border-radius: 2px;
-  font-size: 12px;
+  border-radius: 4px;
+  font-size: 14px;·
+}
+
+/* Style the select */
+select {
+  padding: 8px 16px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray' viewBox='0 0 16 16'%3E%3Cpath d='M8 10.586L3.707 6.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 00-1.414-1.414L8 10.586z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/* Style the option */
+option {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 
@@ -32,21 +58,43 @@ button {
   margin-top: 4px;
   margin-bottom: 4px;
   border: none;
-  border-radius: 2px;
-  background-color: #007bff;
+  border-radius: 4px;
+  background-color: hsl(var(--button-hue), var(--button-saturation), var(--button-lightness));
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
 }
 
 input[type="submit"]:hover,
 button:hover {
-  background-color: #0056b3;
+  background-color: hsl(var(--button-hue), var(--button-saturation), calc(var(--button-lightness) - var(--button-darken)));
 }
+
+.text-button {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  color: hsl(var(--button-hue), var(--button-saturation), var(--button-lightness));
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.text-button:hover {
+  background-color: transparent;
+  color: hsl(var(--button-hue), var(--button-saturation), calc(var(--button-lightness) - var(--button-darken)));
+}
+
 
 /* Style form labels */
 label {
   display: block;
+  color: gray;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -58,14 +106,14 @@ label .required::after {
 /* Style form error messages */
 .error-message {
   color: red;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 2px;
 }
 
 /* Style form success messages */
 .success-message {
   color: green;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 2px;
 }
 
@@ -76,4 +124,12 @@ label .required::after {
   align-items: center;
   gap: 4px;
   margin: 16px 0px;
+}
+
+/* Style links */
+a {
+  color: blue;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
 }
