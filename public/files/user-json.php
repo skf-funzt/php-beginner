@@ -47,8 +47,23 @@ $userDataUpdatedString = json_encode($userDataLoaded);
 echo "User data updated role encoded as JSON string:\n";
 var_dump($userDataUpdatedString);
 echo '<br>';
-file_put_contents('user.txt', $userDataUpdatedString);
+file_put_contents('user-2.txt', $userDataUpdatedString);
 
 echo "User data saved, loaded and updated successfully.";
+
+// Load user data using fread
+$file = fopen('user-2.txt', 'r');
+$size = filesize('user-2.txt');
+$userDataLoaded = fread($file, $size);
+fclose($file);
+echo "User data loaded successfully:\n";
+var_dump($userDataLoaded);
+echo '<br>';
+
+// Convert the string back into an array
+$userDataLoaded = json_decode($userDataLoaded, true);
+echo "User data decoded from JSON:\n";
+var_dump($userDataLoaded);
+echo '<br>';
 ?>
 </pre>

@@ -78,12 +78,6 @@ if (isset($_POST['logout'])) {
     }
     ?>
 
-    <script>
-    function logout() {
-      // Redirect to the logout page to destroy the session
-      window.location.href = "./logout.php";
-    }
-    </script>
-    </div>
-    </body>
-    </html>
+</div>
+</body>
+</html>

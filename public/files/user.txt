@@ -1,1 +1,1 @@
-{"username":"JohnDoe","email":"john@example.com","role":"superadmin"}
+{"username":"JohnDoe","email":"john@example.com","role":"admin"}

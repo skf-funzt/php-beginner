@@ -28,11 +28,17 @@ echo "User data loaded successfully:\n$userDataLoaded\n\n";
 $userDataLoaded = str_replace('Role: admin', 'Role: superadmin', $userDataLoaded);
 
 // Save updated user data using file_put_contents
-file_put_contents('user.txt', $userDataLoaded);
+file_put_contents('user2.txt', $userDataLoaded);
 echo "User data updated successfully:\n$userDataLoaded\n\n";
 
-echo "Try to load the file despite it being deleted:\n";
+// Load user data again using fread
+$file = fopen('user2.txt', 'r');
+$size = filesize('user2.txt');
+$userDataLoadedAgain = fread($file, $size);
+fclose($file);
+echo "User data loaded again:\n$userDataLoadedAgain\n\n";
 
+echo "Try to load the file despite it being deleted:\n";
 echo '</pre>';
 
 // Delete the file

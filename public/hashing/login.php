@@ -1,16 +1,15 @@
 <?php
-const usersDir = "../../users/";
+const USERS_DIR = "../../users/";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
   // Check if the hashed password matches the one in the user's JSON file
   // CHekc if the file exists
-  if (!file_exists(usersDir . $username . ".json")) {
+  if (!file_exists(USERS_DIR . $username . ".json")) {
     $errorMessage = "You need to register first.";
-    
   } else {
-    $user = json_decode(file_get_contents(usersDir . $username . ".json"), true);
+    $user = json_decode(file_get_contents(USERS_DIR . $username . ".json"), true);
     if (password_verify($password, $user["password"])) {
       // route to the index page
       header("Location: ./index.php");

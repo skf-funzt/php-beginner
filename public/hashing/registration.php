@@ -1,8 +1,8 @@
 <?php
-const usersDir = "../../users/";
+const USERS_DIR = "../../users/";
 // Check if the users directory exists, if not create it
-if (!file_exists(usersDir)) {
-  mkdir(usersDir);
+if (!file_exists(USERS_DIR)) {
+  mkdir(USERS_DIR);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $role = $_POST["role"];
   // Create a user by creating a JSON file in the users directory
   // Check if the username already exists
-  if (file_exists(usersDir . $username . ".json")) {
+  if (file_exists(USERS_DIR . $username . ".json")) {
     $errorMessage = "Username already exists.";
   } else {
     // Check if the passwords match
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           "email" => $email,
           "role" => $role
         ];
-        file_put_contents(usersDir . $username . ".json", json_encode($user));
+        file_put_contents(USERS_DIR . $username . ".json", json_encode($user));
         // Redirect to the login page
         header("Location: ./login.php");
       }
