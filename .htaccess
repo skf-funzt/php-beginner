@@ -1,10 +1,14 @@
 RewriteEngine On
 
+# Add this rule to ignore phpmyadmin
+RewriteCond %{REQUEST_URI} !^/phpmyadmin
 RewriteRule ^api/(.*)$ /api.php/$1 [L,QSA]
 
 # RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
 # RewriteRule ^ %1 [L,NE,R=302]
 
+# Add the same condition here
+RewriteCond %{REQUEST_URI} !^/phpmyadmin
 RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
 
 <IfModule mod_headers.c>

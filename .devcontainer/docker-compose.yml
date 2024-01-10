@@ -18,6 +18,11 @@ services:
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
+    # environment:
+    #   PMA_HOST: localhost
+    #   PMA_PORT: 3306
+    #   PMA_ARBITRARY: 1
+
   db:
     image: mariadb:10.4
     restart: unless-stopped
@@ -31,6 +36,19 @@ services:
 
     # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
-  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db 
+      PMA_PORT: 3306
+      PMA_USER: mariadb
+      PMA_PASSWORD: mariadb
+    restart: always
+    ports:
+      - 8081:80
+      
 volumes:
   mariadb-data:

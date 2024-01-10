@@ -16,7 +16,7 @@ trait JsonDeserializable {
     }
   }
 }
-
+// ----- another files in another directory ----- //
 class Product {
   use JsonSerializable, JsonDeserializable;
 
@@ -41,6 +41,8 @@ $product = new Product("Test Product", 100);
 $json = $product->toJson();
 echo $json;
 echo "\n";
+
+// ----- another server -----//
 
 $newProduct = new Product("", 0);
 $newProduct->fromJson($json);

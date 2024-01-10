@@ -1,4 +1,3 @@
-
 <?php
 namespace Loggable;
 trait Loggable {
@@ -34,5 +33,4 @@ class Product {
 
 $product = new Product("Test Product", 100);
 $product->display();
-
 ?>
