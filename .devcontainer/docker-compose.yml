@@ -46,6 +46,7 @@ services:
       PMA_PORT: 3306
       PMA_USER: mariadb
       PMA_PASSWORD: mariadb
+      PMA_USER_CONFIG_BASE64: PD9waHAKZGVjbGFyZShzdHJpY3RfdHlwZXM9MSk7CiRjZmdbJ0FsbG93VGhpcmRQYXJ0eUZyYW1pbmcnXSA9IHRydWU7Cg==
     restart: always
     ports:
       - 8081:80
