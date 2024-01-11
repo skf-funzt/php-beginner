@@ -36,20 +36,49 @@ services:
 
     # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
-  phpmyadmin:
+
+  phpmyadmin-root:
     image: phpmyadmin/phpmyadmin
-    container_name: pma
+    container_name: pma-root
     links:
       - db
     environment:
-      PMA_HOST: db 
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: mariadb
+      PMA_USER_CONFIG_BASE64: PD9waHAKZGVjbGFyZShzdHJpY3RfdHlwZXM9MSk7CiRjZmdbJ0FsbG93VGhpcmRQYXJ0eUZyYW1pbmcnXSA9IHRydWU7Cg==
+    restart: always
+    ports:
+      - 8081:80
+
+  phpmyadmin-user:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma-user
+    links:
+      - db
+    environment:
+      PMA_HOST: db
       PMA_PORT: 3306
       PMA_USER: mariadb
       PMA_PASSWORD: mariadb
       PMA_USER_CONFIG_BASE64: PD9waHAKZGVjbGFyZShzdHJpY3RfdHlwZXM9MSk7CiRjZmdbJ0FsbG93VGhpcmRQYXJ0eUZyYW1pbmcnXSA9IHRydWU7Cg==
     restart: always
     ports:
-      - 8081:80
-      
+      - 8082:80
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER_CONFIG_BASE64: PD9waHAKZGVjbGFyZShzdHJpY3RfdHlwZXM9MSk7CiRjZmdbJ0FsbG93VGhpcmRQYXJ0eUZyYW1pbmcnXSA9IHRydWU7Cg==
+    restart: always
+    ports:
+      - 8083:80
+
 volumes:
   mariadb-data:
