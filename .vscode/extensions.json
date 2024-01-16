@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "stanislav.vscode-twig",
+    "cweijan.vscode-mysql-client2",
+    "mehedidracula.php-constructor",
+    "xdebug.php-debug",
+    "xdebug.php-pack",
+    "bmewburn.vscode-intelephense-client",
+    "zobo.php-intellisense",
+    "mehedidracula.php-namespace-resolver",
+    "mrmlnc.vscode-apache"
+  ]
+}
