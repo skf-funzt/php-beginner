@@ -34,6 +34,6 @@ echo "Modulus: $x % $y = $remainder\n";
 $x = 2;
 $y = 3;
 $result = $x ** $y;
-echo "Exponentiation: $x ^ $y = $result\n";
+echo "Exponentiation: $x ** $y = $result\n";
 print("</pre>");
 ?>

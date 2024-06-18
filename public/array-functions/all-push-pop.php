@@ -20,7 +20,7 @@
   print("array_unshift\n");
   print_r($array); 
 
-  array_splice($array, 1, 0, "Fig");
+  array_splice($array, 1, 0, array("Fig", "Blueberry"));
   print("array_splice\n");
   print_r($array); 
 

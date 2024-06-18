@@ -15,6 +15,4 @@
 
   $result = addNumbers([5.5], 10.5);
   echo "The result is: " . $result;
-
-
 ?>

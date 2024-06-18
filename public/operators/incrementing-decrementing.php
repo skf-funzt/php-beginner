@@ -2,7 +2,7 @@
 print("<pre>");
 
 // Pre-increment operator
-$x = 5;
+$x = 15;
 echo "Pre-increment operator:\n";
 echo "Original value of x: " . $x . "\n";
 echo "After pre-increment: " . ++$x . "\n";

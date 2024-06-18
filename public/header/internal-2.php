@@ -15,12 +15,12 @@ if (headers_sent()) {
 
 echo "<pre>";
 
-// List all headers before removing the Content-Type header
-print("Headers before removing the Content-Type header:\n");
+// List all headers before removing the X-Powered-By header
+print("Headers before removing the X-Powered-By header:\n");
 var_dump($header_before);
 
-// List all headers after removing the Content-Type header
-print("Headers after removing the Content-Type header:\n");
+// List all headers after removing the X-Powered-By header
+print("Headers after removing the X-Powered-By header:\n");
 var_dump($header_after);
 
 echo "</pre>";

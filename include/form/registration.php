@@ -39,10 +39,10 @@ function create_error_template($errors): string
 
 // Create the success template as a HTML formatted string
 //! Note: Can be done inline, to keep the template in one place
-function create_sucess_template($name): string
+function create_success_template($name): string
 {
   $html = "<div id='message'>";
-  $html .= "<p class='sucess'>Welcome {$name}!</p>";
+  $html .= "<p class='success'>Welcome {$name}!</p>";
   $html .= "</div>";
   return $html;
 }

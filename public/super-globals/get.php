@@ -1,6 +1,4 @@
 <?php
-// FILEPATH: /workspaces/php/super-globals/get.php
-
 // Check if a name is provided in the query string
 if (isset($_GET['name'])) {
     $name = $_GET['name'];

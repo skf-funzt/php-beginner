@@ -2,7 +2,7 @@
 print("<pre>");
 
 $age = 25;
-$canVote = ($age >= 18) ? 'Yes' : 'No';
+$canVote = ($age >= 16) ? 'Yes' : 'No';
 echo $canVote;
 echo "\n";
 
