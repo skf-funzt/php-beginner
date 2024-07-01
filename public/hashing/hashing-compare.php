@@ -9,10 +9,12 @@ echo "MD5 Hashed Password: " . $hashedPassword . "\n\n";
 
 
 $password = "myPassword123";
-$hashedPassword = hash('sha256', $password);
+$hashedPassword256 = hash('sha256', $password);
+$hashedPassword512 = hash('sha512', $password);
 
 echo "Original Password: " . $password . "\n";
-echo "SHA256 Hashed Password: " . $hashedPassword . "\n\n";
+echo "SHA256 Hashed Password: " . $hashedPassword256 . "\n";
+echo "SHA512 Hashed Password: " . $hashedPassword512 . "\n\n";
 
 // PASSWORD_DEFAULT uses bcrypt - may change in the future as new algorithms are added to PHP
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

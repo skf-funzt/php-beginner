@@ -31,19 +31,19 @@ var_dump($userDataLoaded);
 echo '<br>';
 
 // Convert the string back into an array
-$userDataLoaded = json_decode($userDataLoaded, true);
+$userData = json_decode($userDataLoaded, true);
 echo "User data decoded from JSON:\n";
-var_dump($userDataLoaded);
+var_dump($userData);
 echo '<br>';
 
 // Update user data
-$userDataLoaded['role'] = 'superadmin';
+$userData['role'] = 'superadmin';
 echo "User data updated role:\n";
-var_dump($userDataLoaded);
+var_dump($userData);
 echo '<br>';
 
 // Save updated user data using file_put_contents
-$userDataUpdatedString = json_encode($userDataLoaded);
+$userDataUpdatedString = json_encode($userData);
 echo "User data updated role encoded as JSON string:\n";
 var_dump($userDataUpdatedString);
 echo '<br>';

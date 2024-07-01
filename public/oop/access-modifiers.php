@@ -21,7 +21,7 @@ class ChildClass extends ParentClass {
   public function accessParentProperties() {
     echo "Accessing parent properties:<br>";
     echo $this->publicProperty . "<br>"; // Accessible
-    echo $this->privateProperty . "<br>"; // Not accessible
+    // echo $this->privateProperty . "<br>"; // Not accessible
     echo $this->protectedProperty . "<br>"; // Accessible
   }
 

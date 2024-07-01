@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ];
         file_put_contents(USERS_DIR . $username . ".json", json_encode($user));
         // Redirect to the login page
-        header("Location: ./login.php");
+        header("Location: login.php");
       }
     }
   }

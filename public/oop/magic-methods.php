@@ -20,10 +20,8 @@ class Person {
     }
   }
 }
-
 $person = new Person("John Doe", 25);
 echo $person->name;
-
 $person->age = 30;
 echo $person->age;
 ?>

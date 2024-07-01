@@ -7,19 +7,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/main.css"></link>
-  <link rel="stylesheet" type="text/css" href="/assets/css/form-style.css">
-</head>
-<body>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
-    <input type="submit" value="Submit">
-    <button class="text-button" onclick="window.location.href = '/files/register-sketch.php';">Register</button>
-  </form>
-</body>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css"></link>
+    <link rel="stylesheet" type="text/css" href="/assets/css/form-style.css">
+  </head>
+  <body>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Submit">
+      <button class="text-button" onclick="window.location.href = '/files/register-sketch.php';">Register</button>
+    </form>
+  </body>
 </html>
